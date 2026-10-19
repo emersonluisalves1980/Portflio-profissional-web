@@ -1,0 +1,714 @@
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #07111f;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin-inline: auto;
+}
+
+/* ==============================
+   IMAGEM DE FUNDO
+============================== */
+
+.imagem-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.imagem-fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mascara {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(75, 92, 127, 0.95),
+        rgba(5, 25, 55, 0.88),
+        rgba(29, 28, 28, 0.94)
+    );
+}
+
+/* ==============================
+   CABEÇALHO E NAVEGAÇÃO
+============================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(4, 12, 28, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.logo span {
+    color: #00d4ff;
+}
+
+.logo p {
+    font-size: 12px;
+    font-weight: normal;
+    color: #c2d3e7;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00d4ff;
+}
+
+/* ==============================
+   APRESENTAÇÃO PRINCIPAL
+============================== */
+
+.hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    padding-block: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.destaque,
+.subtitulo {
+    color: #00d4ff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #00d4ff;
+}
+
+.hero-description {
+    max-width: 650px;
+    color: #d3dfed;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+/* ==============================
+   BOTÕES
+============================== */
+
+.botao {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 8px;
+    background: #00b8dc;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid #00b8dc;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.botao:hover {
+    background: transparent;
+    color: #00d4ff;
+    transform: translateY(-3px);
+}
+
+.botao-secundario {
+    background: transparent;
+    color: #00d4ff;
+}
+
+.botao-secundario:hover {
+    background: #00b8dc;
+    color: #03111f;
+}
+
+/* ==============================
+   SEÇÕES GERAIS
+============================== */
+
+.secao {
+    padding-block: 85px;
+}
+
+.secao-conteudo {
+    max-width: 850px;
+    margin-inline: auto;
+    padding: 35px;
+    background: rgba(5, 18, 38, 0.75);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.secao h2,
+.contato h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 20px;
+    color: #00d4ff;
+}
+
+.secao-conteudo > p:last-child {
+    color: #d3dfed;
+    font-size: 17px;
+}
+
+/* ==============================
+   CERTIFICADOS
+============================== */
+
+.certificados {
+    padding-top: 65px;
+    padding-bottom: 75px;
+}
+
+.certificados-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.certificados-container h2 {
+    color: #00d4ff;
+    font-size: clamp(26px, 4vw, 38px);
+    line-height: 1.2;
+}
+
+.certificados-container p {
+    max-width: 650px;
+    color: #d3dfed;
+    font-size: 16px;
+}
+
+/* ==============================
+   CARROSSEL COM GLASSMORPHISM
+============================== */
+
+.slider {
+    position: relative;
+    isolation: isolate;
+    width: min(850px, 100%);
+    margin-inline: auto;
+    padding: 15px 15px 55px;
+    overflow: hidden;
+
+    background: rgba(5, 18, 38, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 20px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* Controles de rádio */
+
+.slider input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Slides */
+
+.slides {
+    display: flex;
+    width: 500%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 20%;
+    min-width: 0;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 460px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Navegação manual */
+
+.manual-navigation {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    z-index: 5;
+}
+
+.manual-btn {
+    width: 13px;
+    height: 13px;
+    flex: 0 0 13px;
+    border: 2px solid #00d4ff;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.manual-btn:hover {
+    background: #00d4ff;
+    transform: scale(1.2);
+}
+
+/* Posição dos slides */
+
+#radio1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#radio2:checked ~ .slides {
+    transform: translateX(-20%);
+}
+
+#radio3:checked ~ .slides {
+    transform: translateX(-40%);
+}
+
+#radio4:checked ~ .slides {
+    transform: translateX(-60%);
+}
+
+#radio5:checked ~ .slides {
+    transform: translateX(-80%);
+}
+
+/* Indicador do certificado selecionado */
+
+#radio1:checked ~ .manual-navigation label[for="radio1"],
+#radio2:checked ~ .manual-navigation label[for="radio2"],
+#radio3:checked ~ .manual-navigation label[for="radio3"],
+#radio4:checked ~ .manual-navigation label[for="radio4"],
+#radio5:checked ~ .manual-navigation label[for="radio5"] {
+    background: #00d4ff;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.65);
+    transform: scale(1.15);
+}
+
+/* Indicadores automáticos decorativos */
+
+.navigation-auto {
+    display: none;
+}
+
+/* ==============================
+   FERRAMENTAS E TECNOLOGIAS
+============================== */
+
+.tecnologias-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 15px 0;
+}
+
+.tecnologias-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-inline: auto;
+}
+
+.tecnologias-container caption {
+    margin-bottom: 15px;
+    color: #d3dfed;
+}
+
+.tecnologias-container td {
+    min-width: 90px;
+    padding: 15px 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: #ffffff;
+    background: rgba(5, 18, 38, 0.65);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.tecnologias-container td img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin: 0 auto 8px;
+}
+
+.tecnologias-container td span {
+    display: block;
+    font-size: 13px;
+}
+
+/* ==============================
+   TÍTULO DOS SERVIÇOS
+============================== */
+
+.secao-titulo {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.secao-titulo > p:last-child {
+    color: #d3dfed;
+    margin-top: 10px;
+}
+
+/* ==============================
+   CARTÕES DE SERVIÇOS
+============================== */
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.servico-card {
+    min-width: 0;
+    overflow: hidden;
+    background: rgba(5, 18, 38, 0.9);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 15px;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-8px);
+    border-color: #00d4ff;
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.15);
+}
+
+.servico-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.servico-info {
+    padding: 25px;
+}
+
+.servico-info h3 {
+    color: #00d4ff;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.servico-info p {
+    color: #d3dfed;
+    font-size: 15px;
+}
+
+/* ==============================
+   CONTATO
+============================== */
+
+.contato {
+    padding-top: 75px;
+    padding-bottom: 85px;
+    text-align: center;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 25px;
+}
+
+.contato-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contato-links a:hover {
+    transform: translateY(-5px);
+}
+
+.contato-links img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+footer {
+    background: rgba(2, 8, 20, 0.97);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer p {
+    color: #d3dfed;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+footer strong {
+    color: #00d4ff;
+}
+
+/* ==============================
+   ACESSIBILIDADE
+============================== */
+
+a:focus-visible,
+button:focus-visible,
+.manual-btn:focus-visible {
+    outline: 3px solid #ffcc00;
+    outline-offset: 4px;
+}
+
+.slider input[type="radio"]:focus-visible + .slides {
+    outline: 2px solid #ffcc00;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-block: 18px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+}
+
+@media (max-width: 768px) {
+    .certificados {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+
+    .slider {
+        padding: 10px 10px 50px;
+        border-radius: 15px;
+    }
+
+    .slide img {
+        height: 350px;
+    }
+
+    .servicos-grid {
+        gap: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        gap: 15px;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 10px 16px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding-block: 60px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .secao {
+        padding-block: 55px;
+    }
+
+    .secao-conteudo {
+        padding: 25px 20px;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servico-card img {
+        height: 210px;
+    }
+
+    .contato {
+        padding-block: 55px 60px;
+    }
+
+    .contato-links {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificados-container p {
+        font-size: 14px;
+    }
+
+    .slider {
+        padding: 8px 8px 45px;
+    }
+
+    .slide img {
+        height: 260px;
+    }
+
+    .manual-navigation {
+        bottom: 15px;
+        gap: 10px;
+    }
+
+    .manual-btn {
+        width: 11px;
+        height: 11px;
+        flex-basis: 11px;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
